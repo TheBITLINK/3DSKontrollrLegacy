@@ -1,0 +1,78 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="_3DSKontrollr.MainWindow"
+        Title="3DSKontrollr (beta-r05 by&gt;thebit.link)" Height="480" Width="800" Background="Black" ResizeMode="CanMinimize" Closing="Window_Closing" Icon="Client/3ds-icon.ico">
+    <Grid>
+        <Grid Margin="0,32,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Client/touchbg.png" Stretch="None" TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,32,32"/>
+            </Grid.Background>
+            <Rectangle Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="32">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA6A3A6" Offset="0"/>
+                        <GradientStop Color="#FF3E3E3E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.OpacityMask>
+                    <VisualBrush Visual="{StaticResource appbar_monitor}"/>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+            <Label x:Name="IP" Content="(Disconnected)" HorizontalAlignment="Left" Height="32" Margin="47,10,0,0" VerticalAlignment="Top" FontSize="24" Padding="5,0" FontWeight="Thin" Loaded="IP_Loaded"/>
+            <Grid x:Name="connectsc" Margin="0,47" Opacity="0">
+                <Image Name="qrCd"  Height="128" Margin="0" Width="128" Loaded="Image_Loaded"/>
+                <Label x:Name="awaitng" Content="Escanea el Código desde tu 3DS para conectarte." HorizontalAlignment="Center" Height="32" Margin="0,42,0,0" VerticalAlignment="Top" FontSize="24" Padding="5,0" FontWeight="Thin"/>
+                <Rectangle x:Name="n3ds" Margin="333,114,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="128" Height="128" Visibility="Hidden">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFB2E600" Offset="0"/>
+                            <GradientStop Color="#FF006100" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                    <Rectangle.OpacityMask>
+                        <ImageBrush ImageSource="Client/3DS-omask.png"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Grid>
+            <Grid x:Name="connectedsc" Margin="0,47" Visibility="Hidden" Opacity="0">
+                <Label Content="Conexión Actual:" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" Padding="5,0" FontWeight="Thin" Visibility="Hidden"/>
+                <Rectangle Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFB2E600" Offset="0"/>
+                            <GradientStop Color="#FF006100" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                    <Rectangle.OpacityMask>
+                        <ImageBrush ImageSource="Client/3DS-omask.png"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <Label Content="Nintendo 3DS" HorizontalAlignment="Left" Height="32" Margin="38,47,0,0" VerticalAlignment="Top" FontSize="24" Padding="5,0" FontWeight="Thin" Visibility="Hidden"/>
+                <Label x:Name="n3dsipld" Content="IP: " HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" Padding="5,0" FontWeight="Thin"/>
+                <Label x:Name="n3dsregionld" Content="Región: " HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" FontSize="18" Padding="5,0" FontWeight="Thin" UseLayoutRounding="False"/>
+                <Label x:Name="n3dslangld" Content="Idioma: " HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" FontSize="18" Padding="5,0" FontWeight="Thin" UseLayoutRounding="False"/>
+                <Rectangle HorizontalAlignment="Center" Height="34" Margin="0,211,190,0" VerticalAlignment="Center" Width="8" Fill="{DynamicResource BlackBrush}">
+                </Rectangle>
+                <Rectangle HorizontalAlignment="Center" Height="8" Margin="0,211,190,0" VerticalAlignment="Center" Width="34" Fill="{DynamicResource BlackBrush}"/>
+                <Ellipse Fill="{DynamicResource BlackBrush}" HorizontalAlignment="Center" Height="14" Margin="222,139,0,0" VerticalAlignment="Center" Width="14"/>
+                <Rectangle x:Name="upind" Fill="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" Height="17" Margin="0,194,190,0" VerticalAlignment="Center" Width="8" Visibility="Hidden"/>
+                <Rectangle x:Name="dowind" Fill="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" Height="17" Margin="0,228,190,0" VerticalAlignment="Center" Width="8" Visibility="Hidden"/>
+                <Rectangle x:Name="rightind" Fill="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" Height="8" Margin="0,211,173,0" VerticalAlignment="Center" Width="17" Visibility="Hidden"/>
+                <Rectangle x:Name="leftind" Fill="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" Height="8" Margin="0,211,207,0" VerticalAlignment="Center" Width="17" Visibility="Hidden"/>
+                <Ellipse Fill="{DynamicResource BlackBrush}" HorizontalAlignment="Center" Height="14" Margin="198,163,0,0" VerticalAlignment="Center" Width="14"/>
+                <Ellipse x:Name="aind" Fill="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" Height="14" Margin="222,139,0,0" VerticalAlignment="Center" Width="14" Visibility="Hidden"/>
+                <Ellipse x:Name="bind" Fill="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" Height="14"  Margin="198,163,0,0"  VerticalAlignment="Center" Width="14" Visibility="Hidden"/>
+                <Rectangle x:Name="upset" x:FieldModifier="public" HorizontalAlignment="Center" Height="17" Margin="0,194,190,0" VerticalAlignment="Center" Width="8" Visibility="Visible" Fill="#00000000" Cursor="Hand" MouseUp="allset_MouseUp"/>
+                <Rectangle x:Name="dowset" x:FieldModifier="public" HorizontalAlignment="Center" Height="17" Margin="0,228,190,0" VerticalAlignment="Center" Width="8" Visibility="Visible" Fill="#00000000" Cursor="Hand" MouseUp="allset_MouseUp"/>
+                <Rectangle x:Name="rightset" x:FieldModifier="public" HorizontalAlignment="Center" Height="8" Margin="0,211,173,0" VerticalAlignment="Center" Width="17" Visibility="Visible" Fill="#00000000" Cursor="Hand" MouseUp="allset_MouseUp"/>
+                <Rectangle x:Name="leftset" x:FieldModifier="public" HorizontalAlignment="Center" Height="8" Margin="0,211,207,0" VerticalAlignment="Center" Width="17" Visibility="Visible" Fill="#00000000" Cursor="Hand" MouseUp="allset_MouseUp"/>
+                <Rectangle x:Name="aset" x:FieldModifier="public" HorizontalAlignment="Center" Height="14" Margin="222,139,0,0" VerticalAlignment="Center" Width="14" Visibility="Visible" Fill="#00000000" Cursor="Hand" MouseUp="allset_MouseUp"/>
+                <Rectangle x:Name="bset" x:FieldModifier="public" HorizontalAlignment="Center" Height="14"  Margin="198,163,0,0"  VerticalAlignment="Center" Width="14" Visibility="Visible" Fill="#00000000" Cursor="Hand" MouseUp="allset_MouseUp"/>
+
+                <TextBlock HorizontalAlignment="Right" Height="60" Margin="0,10,10,0" TextWrapping="Wrap" Text="Para cambiar la acción de una tecla, haz clic sobre ella en la imagen." VerticalAlignment="Top" Width="431" Foreground="White" FontWeight="Thin" TextAlignment="Right"/>
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="32" Margin="0" VerticalAlignment="Top" Width="794" Background="#FF111111"/>
+    </Grid>
+</Window>

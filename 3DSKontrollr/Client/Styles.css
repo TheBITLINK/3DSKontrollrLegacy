@@ -1,0 +1,52 @@
+﻿/*
+    This file is part of 3DSKontrollr
+    All CSS rules you put here, will be applied in the Nintendo 3DS side of the App.
+    If you want to change the way 3DSKontrollr looks, you are free to do anything you want.
+*/
+
+body
+{
+    background: #000000 url(/src/client/touchbg.png);
+    color: #ffffff; 
+    background-repeat: repeat; 
+    background-position: center;
+    margin:0px;
+}
+
+#bartop
+{
+    margin: 0;
+    width: 100%;
+    background: #111111;
+    padding: 0px;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+#bartop button
+{
+    float: right;
+    background: #222222;
+    height: 32px;
+    border: 0px none;
+    color: #FFFFFF;
+}
+
+#bartop img
+{
+    float: left;
+    margin-right: 4px;
+    height: 32px;
+}
+
+#bartop input
+{
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    margin: 0px;
+}
+
+#topscreen, #currsc{width:400px;height:200px;overflow:hidden;}
+
+#bottomscreen{width:320px;height:212px;overflow:hidden;margin:-4px auto;}
