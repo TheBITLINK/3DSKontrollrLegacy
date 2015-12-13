@@ -9,4 +9,4 @@ If you want to download binaries for the latest stable version, go to https://d.
 
 This project is licensed under MIT, so you can do anything you want with the code.
 
-I'm currently working on a continuation for this project. There's no exact date, but it will support mobile phones and emulating Xbox controllers!
+I'm currently working on a continuation for this project. There's no exact date (but it' advancing quick!), but it will support mobile phones and emulating Xbox controllers!
