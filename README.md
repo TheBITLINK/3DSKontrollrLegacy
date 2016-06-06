@@ -1,5 +1,5 @@
 # 3DSKontrollr
-** Please check out [3DSKontrollr+](https://github.com/3DSKontrollr), a rewrite from scratch of this project. **
+**Please check out [3DSKontrollr+](https://github.com/3DSKontrollr), a rewrite from scratch of this project.**
 
 Control your Windows PC with a Nintendo 3DS console.
 
